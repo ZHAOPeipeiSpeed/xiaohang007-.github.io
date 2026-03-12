@@ -1,85 +1,93 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>{{ site.name }}: {{ page.title }}</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet"
-              href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-              integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-              crossorigin="anonymous">
-        <link rel="stylesheet"
-              href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="{{ site.base }}/css/group.css">
-    </head>
-    <body>
-        <div class="container">
-            <!-- This is a bit nasty, but it basically says be a column first, and on larger screens be a spaced out row -->
-            <div class="header d-flex
-                        flex-column
-                        flex-md-row justify-content-md-between">
-                <a href="{{ site.base }}/" class="">
-                    <img src="{{ site.base }}/img/logo.png" 
-                         srcset="{{ site.base }}/img/logo@2x.png 2x"
-                         alt="Awesome" id="logo">
-                </a>
-                <ul class="nav nav-pills justify-content-center">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}Peipei Zhao</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f8f9fa;
+      color: #222;
+    }
 
-                    {% assign shorturl = page.url | replace:'.html','' | replace:'index','' %}
-                    {% for item in site.navigation %}
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #ddd;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-                        {% assign itemshorturl = item.link | replace:'.html','' %}
+    .site-title a {
+      text-decoration: none;
+      color: #222;
+      font-size: 26px;
+      font-weight: bold;
+    }
 
-                        {% assign maybe-active = '' %}
-                        {% if item.title == 'Research' and page.layout == 'project' %}
-                            {% assign maybe-active = 'active' %}
-                        {% endif %}
-                        {% if itemshorturl == shorturl or is-research %}
-                            {% assign maybe-active = 'active' %}
-                        {% endif %}
+    .site-nav a {
+      text-decoration: none;
+      color: #222;
+      margin-left: 24px;
+      font-size: 16px;
+    }
 
-                        <li class="nav-item">
-                            <a class="nav-link {{ maybe-active }}"
-                               href="{{ site.base }}{{ item.link }}">
-                                {{ item.title }}
-                            </a>
-                        </li>
+    .site-nav a:hover {
+      color: #0d6efd;
+    }
 
-                    {% endfor %}
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
 
-                </ul>
-            </div>
+    .site-footer {
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      padding: 24px 0 40px;
+    }
 
-            {% if page.image %}
-                <img src="{{ page.image }}"
-                     alt="{{ page.title }}"
-                     style="max-width: 600px"
-                     class="img-fluid mx-auto d-block mb-4"/>
-            {% endif %}
+    .jumbotron h2, .jumbotron h3 {
+      margin-top: 0;
+    }
 
-            {% if page.notitle != true %}
-                <h1>{{ page.title }}</h1>
-            {% endif %}
+    .jumbotron p, .jumbotron li {
+      line-height: 1.8;
+      font-size: 17px;
+    }
+  </style>
+</head>
+<body>
 
-            {{ content }}
+  <header class="site-header">
+    <div class="site-title">
+      <a href=" ">Peipei Zhao</a >
+    </div>
 
-            <div class="footer">
-                <p>
-                    <a href="https://www.ln.edu.hk/sis">跨学科学院 School of Interdisciplinary Studies</a>
-                    -
-                    <a href="https://www.ln.edu.hk/chs">岭南大学 </a>
-                    <a href="https://www.ln.edu.hk/"> Lingnan University</a>
-                    -
-                    <a href = "mailto: hangxiao@ln.edu.hk">hangxiao@ln.edu.hk</a>
-                </p>
+    <nav class="site-nav">
+      <a href="{{ site.baseurl }}/">Home</a >
+      <a href="{{ site.baseurl }}/research.html">About</a >
+      <a href="{{ site.baseurl }}/publications.html">Projects</a >
+      <a href="{{ site.baseurl }}/people.html">Contact</a >
+    </nav>
+  </header>
 
+  <main class="container">
+    {{ content }}
+  </main>
 
-            </div>
+  <footer class="site-footer">
+    <p>© Peipei Zhao | Personal Academic Website</p >
+  </footer>
 
-        </div> <!-- /container -->
-
-        <!-- Support retina images. -->
-        <script type="text/javascript"
-                src="{{ site.base }}/js/srcset-polyfill.js"></script>
-    </body>
+</body>
 </html>
