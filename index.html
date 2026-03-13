@@ -4,58 +4,56 @@ title: Peipei Zhao
 notitle: true
 ---
 
-<div class="jumbotron" style="background:#fff; padding:30px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08); max-width:1100px; margin:40px auto;">
+<div class="jumbotron" style="background:#ffffff; padding:30px; border-radius:16px; box-shadow:0 2px 12px rgba(0,0,0,0.08); max-width:1000px; margin:40px auto;">
+
   <div style="text-align:center; margin-bottom:30px;">
-    <img src="/img/logo.png?v=3" alt="Peipei Zhao Banner" style="max-width:100%; height:auto; border-radius:10px;">
+    < img src="/img/logo.png?v=3" alt="Peipei Zhao Banner" style="max-width:100%; height:auto; border-radius:12px;">
   </div>
 
-  <h2>Peipei Zhao</h2>
+  <h1 style="text-align:center;">Peipei Zhao</h1>
+  <p style="text-align:center;">MScCT+ Student, Lingnan University, Hong Kong</p >
+  <p style="text-align:center;">CDT501 Assignment: Personal Website and AI-Assisted Programming</p >
+  <p style="text-align:center;">Student ID: 3228718</p >
 
-  <p>MScCT+ Student, Lingnan University, Hong Kong</p >
+  <hr style="margin:30px 0;">
 
-  <p>CDT501 Assignment: Personal Website and AI-Assisted Programming</p >
+  <h2>About Me</h2>
+  <p>
+    Hello! I am Peipei Zhao, currently studying at Lingnan University in Hong Kong.
+    I am interested in AI, blockchain, digital assets, business analysis, and data analytics.
+  </p >
 
+  <h2>Interactive AI Demo</h2>
+  <p>
+    This is an interactive sentiment analysis demo built with Python, Hugging Face Transformers, and Gradio.
+    Users can enter a sentence and receive an AI-generated sentiment result.
+  </p >
+
+  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.17.1/gradio.js"></script>
+  <gradio-app src="https://zhaopeipei-sentiment.hf.space" theme_mode="light"></gradio-app>
+
+  <h2>Python Script</h2>
+  <pre style="background:#f4f4f4; padding:16px; border-radius:10px; overflow-x:auto;">
+from transformers import pipeline
+
+classifier = pipeline("sentiment-analysis")
+result = classifier("I love using Hugging Face transformers!")
+print(result)
+  </pre>
+
+  <h2>Reflection on AI-Assisted Programming</h2>
+  <p>
+    AI-assisted programming helps beginners generate code, understand logic, and fix errors more efficiently.
+    In this assignment, I used AI tools to build both a personal website and an interactive Python demo.
+  </p >
+  <p>
+    However, AI is not always correct. I still need to test the code, evaluate the output, and make improvements independently.
+    Therefore, AI is a helpful assistant, but critical thinking remains essential.
+  </p >
+
+  <h2>Contact</h2>
+  <p>Email: peipeizhao@ln.hk</p >
+  <p>GitHub: zhaopeipeispeed</p >
   <p>Student ID: 3228718</p >
 
-  <hr>
-
-  <h3>About Me</h3>
-  <p>
-    I have an interdisciplinary background in education, communication engineering, and digital innovation.
-    Through CDT501, I am learning the basics of programming, AI-assisted tools, and digital problem-solving.
-  </p >
-
-  <h3>Research Interests</h3>
-  <ul>
-    <li>Artificial Intelligence</li>
-    <li>Financial Technology</li>
-    <li>Blockchain and Digital Assets</li>
-    <li>Business Analytics</li>
-    <li>Data Analysis</li>
-  </ul>
-
-  <h3>Education</h3>
-  <ul>
-    <li>Lingnan University – MScCT+ Student</li>
-    <li>Master's Degree in Education</li>
-    <li>Bachelor's Degree in Communication Engineering</li>
-  </ul>
-
-  <h3>Skills</h3>
-  <ul>
-    <li>Python</li>
-    <li>Excel</li>
-    <li>Data Analysis</li>
-    <li>Research Writing</li>
-    <li>Presentation Design</li>
-  </ul>
-
-
-
-  <h3>Reflection on AI and Programming</h3>
-  <p>
-    This assignment helps me understand that AI can support beginners in programming, idea generation,
-    and debugging. At the same time, AI-generated content still needs human checking, revision, and judgment.
-    Clear instructions and careful thinking are important when using AI tools in learning and programming.
-  </p >
 </div>
