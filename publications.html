@@ -15,7 +15,7 @@ title: Projects
   <h3>Project Overview</h3>
   <p>
     This page presents my CDT501 project work in a direct and interactive way. It includes a music playback section,
-    a simple snake game, and two videos. These examples show how digital media and programming can be combined
+    a simple snake game, and two video demonstrations. These examples show how digital media and programming can be combined
     for creative presentation and interactive experience.
   </p >
 
@@ -26,7 +26,7 @@ title: Projects
     This section demonstrates the music result directly. Users can click play to listen to the selected audio output.
   </p >
 
-  <audio controls autoplay style="width:100%; margin-top:15px;">
+  <audio controls style="width:100%; margin-top:15px;">
     <source src="demo.wav" type="audio/wav">
     Your browser does not support the audio element.
   </audio>
@@ -35,7 +35,7 @@ title: Projects
 
   <h3>Project 2: Snake Game</h3>
   <p>
-    This is a simple snake game embedded directly in the webpage. Users can control the snake with the arrow keys.
+    This is a simple snake game embedded directly in the webpage. Users can control the snake with the W, A, S, and D keys.
     The game demonstrates basic programming logic, interaction design, and real-time visual feedback.
   </p >
 
@@ -45,7 +45,7 @@ title: Projects
     </p >
     <canvas id="snakeCanvas" width="400" height="400" style="border:2px solid #4a67d6; border-radius:12px; background:#ffffff;"></canvas>
     <p style="margin-top:15px; color:#555;">
-      Use ↑ ↓ ← → keys to control the snake
+      Use W A S D keys to control the snake
     </p >
     <button onclick="startGame()" style="padding:12px 24px; font-size:18px; border:none; border-radius:10px; background:#4a67d6; color:white; cursor:pointer;">
       Start / Restart
@@ -80,11 +80,21 @@ title: Projects
     document.addEventListener("keydown", changeDirection);
 
     function changeDirection(event) {
-      const key = event.key;
-      if (key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
-      else if (key === "ArrowUp" && direction !== "DOWN") direction = "UP";
-      else if (key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
-      else if (key === "ArrowDown" && direction !== "UP") direction = "DOWN";
+      const key = event.key.toLowerCase();
+
+      if (["w", "a", "s", "d"].includes(key)) {
+        event.preventDefault();
+      }
+
+      if (key === "a" && direction !== "RIGHT") {
+        direction = "LEFT";
+      } else if (key === "w" && direction !== "DOWN") {
+        direction = "UP";
+      } else if (key === "d" && direction !== "LEFT") {
+        direction = "RIGHT";
+      } else if (key === "s" && direction !== "UP") {
+        direction = "DOWN";
+      }
     }
 
     function drawGame() {
@@ -162,20 +172,20 @@ title: Projects
     This section presents the original uploaded video.
   </p >
 
-  <video controls style="width:100%; border-radius:12px; margin-top:15px;">
+  <video controls playsinline style="width:100%; border-radius:12px; margin-top:15px;">
     <source src="original_viedo.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
   <h3 style="margin-top:35px;">Project 4: Edited Video</h3>
-<p>
-  This section presents the edited video after processing.
-</p>
+  <p>
+    This section presents the edited video after processing.
+  </p >
 
-<video controls playsinline style="width:100%; border-radius:12px; margin-top:15px;">
-  <source src="deited.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+  <video controls playsinline style="width:100%; border-radius:12px; margin-top:15px;">
+    <source src="deited.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
   <hr style="margin:30px 0;">
 
